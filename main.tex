@@ -1,0 +1,305 @@
+\documentclass[11pt]{article}
+
+% ================ PACKAGES ====================
+
+\usepackage[reset, a4paper, margin=6mm, top=7mm, right=4mm]{geometry}
+% text alignment
+\usepackage{ragged2e}
+% loremipsum
+\usepackage{lipsum}
+% text color
+\usepackage{color}
+\usepackage{xcolor}
+% underline
+\usepackage{ulem}
+\usepackage{contour}
+% multiple columns
+\usepackage{paracol}
+% custom fonts
+\usepackage{fontspec}
+% paper bg
+\usepackage{eso-pic}
+% icons
+\usepackage{fontawesome5}
+% hyperlinks
+\usepackage{hyperref}
+% better itemize
+\usepackage{enumitem}
+
+% ================ SETTINGS ====================
+
+\setlist[itemize]{noitemsep, topsep=-2pt, leftmargin=2ex}
+
+\setromanfont{CormorantGaramond}
+\setsansfont{SourceSerifPro}
+\renewcommand{\familydefault}{\rmdefault}
+
+% no page numbers and the sorts
+\thispagestyle{empty}
+% no indentation at beginning of paragraph
+\parindent=0pt
+% for underline
+\renewcommand{\ULdepth}{3pt}
+\renewcommand{\ULthickness}{0.5pt}
+\contourlength{2.0pt}
+
+% for links
+\hypersetup{
+    colorlinks=false,
+    pdfborder = {0 0 0},
+}
+
+% no hyphenation
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+% ================ MACROS ======================
+
+\newfontfamily\titlethin{CormorantGaramond-Light}
+\newfontfamily\titlethick{CormorantGaramond-Medium}
+\newfontfamily\titlebold{CormorantGaramond-Bold}
+\newfontfamily\normaltext{SourceSerifPro}
+
+\newcommand{\resumetitle}[3]{
+    \AddToShipoutPictureBG{
+        \AtPageUpperLeft {
+        \raisebox{-0.09\paperheight}{
+            \color{black!85}\rule{2\paperwidth}{\paperheight}}
+        }}
+    \begin{Center}
+        \begingroup
+        \titlethin
+        \color{black!10}\Huge{#1}
+        \titlethick
+        \color{black!5}\Huge{#2} \\
+        \vspace{2mm}
+        \textrm{\color{black!15}\Large{#3}}
+        \endgroup
+    \end{Center}
+    \vspace{7mm}
+}
+
+\newcommand{\betteruline}[1]{
+    \uline{#1}
+}
+
+\newcommand{\sectiontitle}[1]{
+    \begingroup
+        \titlebold
+        \betteruline{\Large\uppercase{#1}  }
+        \vspace{1.7mm}
+    \endgroup
+}
+
+\newcommand{\sectioncontent}[1]{
+    \begingroup
+        \begin{FlushLeft}
+        \vspace{-3mm}
+        \sffamily\small#1
+        \end{FlushLeft}
+    \endgroup
+    \vspace{2mm}
+}
+
+\newcommand{\job}[3]{
+    \begingroup
+        \textbf{\small#1} - \small#2
+        \hfill\color{black!70}\small{#3}
+    \endgroup
+}
+
+\newcommand{\project}[2]{
+    \begingroup
+        \textbf{\small#1}
+        \hfill\color{black!70}\small{#2}
+    \endgroup
+}
+
+\newcommand{\spacevv}{
+    \vspace{2mm}
+}
+
+\newcommand{\honor}[2]{
+    \textcolor{black!70}{#1} - #2 \\
+    \vspace{1.5mm}
+}
+
+\begin{document}
+    \resumetitle{Do}{Le Long An} {
+        dolelongan@gmail.com |
+        0937022184 |
+        SkyGarden 3, Phu My Hung Residential Area, District 7
+    }
+
+    \columnratio{0.31}
+    \setlength{\columnsep}{7mm}
+    \begin{paracol}{2}
+
+    \sectiontitle{about me}
+    \sectioncontent{
+        Having previously majored in Computer Science and Data Science at UWA, I am now studying at RMIT University in Vietnam, majoring in Information Technology. Due to my experience leading most of my projects, I developed the soft skills of Time Management and Leadership.
+    }
+
+    \sectiontitle{education}
+    \sectioncontent{
+        \textbf{Foundation Program - Advanced} \\
+        Taylor's College \\
+        Graduated with \textit{GPA 3.0/4.0} \\
+        \textcolor{black!70}{10/2019 - 06/2020} \\
+        \vspace{2mm}
+        \textbf{B.Sc. in Computer Science and Data Science} \\
+        University of Western Australia \\
+        \textcolor{black!70}{07/2020 - 12/2021} \\
+         \vspace{2mm}
+        \textbf{B.IT. in Web Development} \\
+        RMIT University Vietnam \\
+        \textit{GPA 3.4/4.0} \\
+        \textcolor{black!70}{06/2022 - Current} \\
+    }
+
+    \sectiontitle{links}
+    \sectioncontent{
+        \faIcon{github-alt}\hspace{3mm}
+        \href{https://github.com/LaansDole}{LaansDole} \\
+        \vspace{2mm}
+        \faIcon{linkedin-in}\hspace{3mm}
+        \href{https://www.linkedin.com/in/do-le-long-an/}{do-le-long-an} \\
+        \vspace{2mm}
+        \faIcon{facebook}\hspace{3mm}
+        \href{https://www.facebook.com/laansdole/}{laansdole}
+    }
+
+    \sectiontitle{Honors \& Awards}
+    \sectioncontent{
+        \honor{10/2019}{Taylors College Foundation Program Highest Scholarship - 7,500AUD.}
+        \vspace{2mm}
+        \honor{06/2020}{ Australia's Global Excellence Scholarship - 15,000AUD per anum.}
+        \vspace{2mm}
+        \honor{2021}{ Best Regional Marketing Member in AIESEC Australia 2021.2.}
+
+    }
+
+    \sectiontitle{Volunteer}
+    \sectioncontent{
+    \honor{12/2019 - 03/2020}{StudyPerth Airport Greeter}
+    \begin{itemize}
+        \item Guide and assist foreign students and guests at Perth Airport, Western Australia
+    \end{itemize}
+    }
+
+    \switchcolumn
+
+    \sectiontitle{Project Experience}
+    \sectioncontent{
+
+      \job{RBLOG}{Front End Developer}{10/2022 - 01/2023} \\
+      \textcolor{black!70}{\textit{RMIT Vietnam - Building IT System - COSC2634}}
+\vspace{1mm}
+      \begin{itemize}
+        \item Tech Stack used: MEN (MongoDB + Express + React + Node.js)
+\vspace{1mm}
+        \item CSS Framework: Tailwind
+\vspace{1mm}
+        \item Objective: Giving the blogging community a platform that is easy to use.
+\vspace{1mm}
+        \item  \href{https://rmit-blog.netlify.app/}{Link to Website Demo: rmit-blog}
+      \end{itemize}
+      \spacevv
+\vspace{2mm}
+      \job{E-Commerce Website}{Project Leader}{04/2023 - 05/2023} \\
+      \textcolor{black!70}{\textit{RMIT Vietnam - Web Programming - COSC2430}}
+\vspace{1mm}
+      \begin{itemize}
+        \item Tech Stack used: MEN (MongoDB + Express + EJS + Node.js)
+\vspace{1mm}
+        \item CSS Framework: Bootstrap
+\vspace{1mm}
+        \item Objective: Our intention is to create an e-commerce website that draws inspiration from Lazada but simplifies the user interface and functionality.
+\vspace{1mm}
+        \item  \href{https://group9ecommerceweb-dolelongan.b4a.run/}{Link to Web App Demo: group9-eCommerce}
+\vspace{1mm}
+        \item  \href{https://github.com/LaansDole/Group9_E-commerce_Website}{Link to Project GitHub repository: group9-eCommerce}
+      \end{itemize}
+      \spacevv
+\vspace{2mm}
+\project{Resume Builder}{31/05/2023}
+      \begin{itemize}
+        \item Language used: LaTeX
+\vspace{1mm}
+        \item Objective: Creating my own resume
+\vspace{1mm}
+        \item  \href{https://github.com/LaansDole/my-resume}{Link to GitHub repository}
+      \end{itemize}
+    }
+
+    \sectiontitle{Skills}
+    \sectioncontent{
+    \vspace{1mm}
+        \project{\href{https://www.credly.com/badges/20c053cd-785a-4100-bc79-bd1c902d5c28/public_url}{AWS Academy Graduate - AWS Academy Cloud Foundations}}{03/2023 - 30/05/2023} \\
+    \vspace{1mm}
+        \textcolor{black!70}{\textit{RMIT Vietnam - Cloud Foundation - COSC2766}}
+        \vspace{1mm}
+        \begin{itemize}
+            \item  Completion of AWS Cloud Practitioner Preparation.
+\vspace{1mm} 
+            \item \href{https://www.credly.com/badges/20c053cd-785a-4100-bc79-bd1c902d5c28/public_url}{Link to Cloud Foundation Badge}
+        \end{itemize}
+        \spacevv
+
+       \project{Data Structure and Algorithm}{03/2023 - 30/05/2023} \\
+    \vspace{1mm}
+        \textcolor{black!70}{\textit{RMIT Vietnam - Data Structure and Algorithm - COSC2658}}
+        \vspace{1mm}
+        \begin{itemize}
+        \item Language used: Java
+\vspace{1mm} 
+\item Problem-solving paradigms such as divide and conquer, decrease and conquer, greedy, and dynamic programming.
+\vspace{1mm} 
+            \item \href{https://github.com/miketvo/rmit2023a-cosc2658-group-project}{Link to Group Project repository}
+        \end{itemize}
+        \spacevv
+       
+        \project{Others}{06/2022 - Current} \\
+        \textcolor{black!70}{\textit{RMIT Vietnam - Software Engineering Design - EEET2482}}
+        \begin{itemize}
+            \item  \href{https://github.com/miketvo/rmit2022c-eeet2482-lodging-app}{C++ Group Project}
+        \end{itemize}
+        \spacevv
+    }
+
+    \sectiontitle{CO-CURRICULAR ACTIVITIES}
+    \sectioncontent{
+    \vspace{1mm} 
+          \project{Micro:bit Automatic Plant Watering}{07/2022 - 09/2022} \\
+          \textcolor{black!70}{\textit{RMIT Vietnam - NCT Club}}
+          \vspace{1mm} 
+          \begin{itemize}
+            \item Participating in developing Micro:bit Automatic Plant Watering
+          \end{itemize}
+          \spacevv
+        
+          \project{NCT Landing Page}{11/2022 - 03/2023} \\
+          \textcolor{black!70}{\textit{RMIT Vietnam - NCT Club}}
+          \vspace{1mm} 
+          \begin{itemize}
+            \item Participating in developing NCT Landing page 
+          \end{itemize}
+          \spacevv
+        
+          \project{RMIT Business Plan Competition}{05/2023 - Current} \\
+          \textcolor{black!70}{\textit{RMIT Vietnam - FinTect Club}}
+          \vspace{1mm} 
+          \begin{itemize}
+            \item Participating in developing Event Landing Page 
+          \end{itemize}
+          \spacevv
+    
+    }
+
+    \normaltext \hfill \tiny Last updated \today
+
+    \end{paracol}
+
+\end{document}
