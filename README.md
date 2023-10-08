@@ -8,7 +8,8 @@ Having previously majored in Computer Science and Data Science at UWA, I am now 
 - [Ecommerce WebApps with multiple CRUDs](https://group9ecommerceweb-dolelongan.b4a.run/)
 - [RMIT Business Plan Competition Landing Page on Firebase](https://rbpc-website.web.app/)
 - [Secret Key Guesser with Data Analysis](https://github.com/miketvo/rmit2023a-cosc2658-group-project)
-***And more on my profile***
+<br></br>
+***...And more on my profile***
 
 ## My useful resources
 See [Resources Link](Resources.md)
